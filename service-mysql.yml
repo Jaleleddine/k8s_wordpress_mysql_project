@@ -1,14 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: wordpress-mysql
+  name: service-clusterip
 spec:
   selector:
-    app: wordpress
+    app: mysql-deploy
   type: ClusterIP
   ports: 
-    - port: 8000
-      targetPort: 80 
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306
       
      
 
